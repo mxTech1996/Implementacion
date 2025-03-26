@@ -1,51 +1,43 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import { navData } from '@/data';
-import { Navbar as NavbarV2, theme } from 'ecommerce-mxtech';
-import { useInformation } from '@/store/useInformation';
-
-const { useToken } = theme;
+import { dataSite } from '@/data';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
-  const { dataSite } = useInformation();
-  const router = useRouter();
-  const {
-    token: { colorPrimary },
-  } = useToken();
-
   return (
-    <NavbarV2
-      linksProps={{
-        variant: 'underline',
-        align: 'left',
-      }}
-      textColor='black'
-      withLogo={true}
-      imageProps={{
-        src: dataSite.iconImage,
-        className: 'w-28',
-      }}
-      styleTitle={{
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: 'black',
-      }}
-      links={navData}
-      onClickProduct={(product) => {
-        router.push(`/product/${product.id}`);
-      }}
-      buttonCartProps={{
-        onClick: () => router.push('/my-cart'),
-      }}
-      buttonContactProps={{
-        onClick: () => router.push('/more-information'),
-      }}
-      onRedirect={(path) => router.push(path)}
-      styleHeader={{
-        height: 100,
-        color: 'black',
-      }}
-    />
+    <nav className='bg-[#ffffff] px-6 py-4 flex justify-between items-center'>
+      <Link href='/'>
+        <div className='flex items-center gap-2'>
+          <Image
+            src={dataSite.iconImage}
+            alt='Policy Logo'
+            width={90}
+            height={90}
+          />
+          {/* Si quieres texto adicional, lo puedes dejar así */}
+          {/* <span className='text-xl font-bold'>Policy</span> */}
+        </div>
+      </Link>
+      <ul className='hidden md:flex gap-6 text-sm font-medium'>
+        <li className='cursor-pointer'>
+          <Link href='/#services'>Services</Link>
+        </li>
+        <li className='cursor-pointer'>
+          <Link href='/#about'>About Us</Link>
+        </li>
+        <li className='cursor-pointer'>
+          <Link href='/#products'>Our Products</Link>
+        </li>
+        {/* <li className='cursor-pointer'>
+          <Link href='/#references'>Reference</Link>
+        </li> */}
+      </ul>
+      <Link href='/my-cart'>
+        <button className='bg-[#2F5F53] text-white font-medium px-6 py-2 rounded-full text-sm'>
+          Go to cart
+        </button>
+      </Link>
+    </nav>
   );
 };
 
