@@ -130,7 +130,7 @@ export const dataSite = {
       name: 'Carla Martinez',
       description:
         'I took the property cleaning management course, and it was an incredible experience. I learned about products, techniques, and staff management,Now, I have my own cleaning company and feel confident with the knowledge I gained. Highly recommended.',
-      rating: 5,
+      rating: 4,
       image: null,
     },
     {
@@ -151,7 +151,7 @@ export const dataSite = {
       name: 'Miguel Petren',
       description:
         'The training they offer is very comprehensive and affordable. I’ve taken several courses on disinfection and team management, and I always gain valuable insights. Plus, the consultants answer all questions with great patience',
-      rating: 5,
+      rating: 4,
       image: null,
     },
     {

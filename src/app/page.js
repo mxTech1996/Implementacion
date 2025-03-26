@@ -7,6 +7,7 @@ import Showcase from '@/components/organisms/ShowCase';
 import CleaningServices from '@/components/organisms/Services';
 import AboutSection from '@/components/organisms/AboutSection';
 import ProductsSection from '@/components/organisms/Products';
+import ReferenceCarousel from '@/components/organisms/References';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <CleaningServices />
       <ProductsSection />
       <AboutSection />
+      <ReferenceCarousel />
       <Footer />
     </main>
   );
